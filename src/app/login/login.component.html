@@ -9,4 +9,32 @@
     entertainment fan looking for a recommendation, or to share an opinion
     you've come to the right place.
   </div>
+  <form class="login-form" #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+    <mat-form-field class="login-field" appearance="outline">
+      <mat-label>Username</mat-label>
+      <input
+        matInput
+        placeholder="Enter username"
+        type="text"
+        id="username"
+        required
+        name="username"
+        ngModel
+      />
+    </mat-form-field>
+    <mat-form-field class="login-field" appearance="outline">
+      <mat-label>Password</mat-label>
+      <input
+        matInput
+        placeholder="Enter password"
+        type="password"
+        id="password"
+        required
+        name="password"
+        ngModel
+      />
+    </mat-form-field>
+
+    <button mat-raised-button class="btn btn-dark">Login</button>
+  </form>
 </div>

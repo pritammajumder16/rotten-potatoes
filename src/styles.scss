@@ -1,10 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Aladin&family=Roboto&family=Creepster&display=swap");
+@import "@angular/material/prebuilt-themes/indigo-pink.css";
 * {
   box-sizing: border-box;
   padding: 0%;
   margin: 0%;
 }
-@import url("https://fonts.googleapis.com/css2?family=Aladin&family=Roboto&family=Creepster&display=swap");
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.btn {
+  width: fit-content;
+}
+.btn-dark {
+  background-color: black !important;
+  color: white !important;
+}
