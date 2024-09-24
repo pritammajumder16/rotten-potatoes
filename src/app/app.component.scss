@@ -1,6 +1,8 @@
 .app-container {
-  padding: 1rem;
+  padding: 3rem;
   min-height: 100vh;
   width: 100%;
+  max-width: 100vw;
+  overflow: hidden;
   background: linear-gradient(135deg, #ffe645 0%, #e2aa02 100%);
 }
