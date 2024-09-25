@@ -12,7 +12,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 
-type controlNames = 'name' | 'email' | 'password' | 'confirmPassword';
 @Component({
   selector: 'app-signup',
   standalone: true,
