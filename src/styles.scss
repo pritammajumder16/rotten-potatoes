@@ -22,3 +22,25 @@ body {
   background-color: black !important;
   color: white !important;
 }
+.auth-form {
+  width: fit-content;
+  height: fit-content;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  position: absolute;
+  bottom: 50px;
+  right: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  box-shadow: 5px 5px 20px #383838;
+  .auth-field {
+    width: 300px;
+  }
+  .title {
+    margin-bottom: 1rem;
+    font-size: x-large;
+    font-weight: 600;
+  }
+}

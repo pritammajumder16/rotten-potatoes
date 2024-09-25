@@ -1,0 +1,30 @@
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  .film {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    z-index: 0;
+    max-height: calc(100vh - 50px);
+  }
+  .logo {
+    font-size: 3rem;
+    font-weight: bold;
+    font-family: "Creepster", cursive;
+    letter-spacing: 10px;
+
+    z-index: 1;
+    text-align: right;
+  }
+  .desc {
+    font-size: 1.5rem;
+    font-family: "Aladin", cursive;
+    letter-spacing: 5px;
+    margin-top: 50px;
+    z-index: 1;
+    text-align: right;
+    max-width: 900px;
+  }
+}

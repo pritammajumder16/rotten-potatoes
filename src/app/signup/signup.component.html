@@ -1,0 +1,70 @@
+<form class="auth-form" [formGroup]="signupForm" (ngSubmit)="signup()">
+  <span class="title">Sign up</span>
+  <mat-form-field class="auth-field" appearance="outline">
+    <mat-label>Name</mat-label>
+    <input
+      matInput
+      placeholder="Enter name"
+      type="text"
+      formControlName="name"
+    />
+    <mat-error
+      *ngIf="signupForm.touched&&controls['name']?.errors?.['required']"
+      >Name is required</mat-error
+    >
+  </mat-form-field>
+  <mat-form-field class="auth-field" appearance="outline">
+    <mat-label>E-mail</mat-label>
+    <input
+      matInput
+      placeholder="Enter email"
+      type="text"
+      [formControl]="controls['email']"
+    />
+    <mat-error
+      *ngIf="signupForm.touched&&controls['email']?.errors?.['required']"
+      >Email is required</mat-error
+    >
+    <mat-error *ngIf="signupForm.touched&&controls['email']?.errors?.['email']"
+      >Must be a valid email</mat-error
+    >
+  </mat-form-field>
+  <mat-form-field class="auth-field" appearance="outline">
+    <mat-label>Password</mat-label>
+    <input
+      matInput
+      placeholder="Enter password"
+      type="text"
+      formControlName="password"
+    />
+    <mat-error
+      *ngIf="signupForm.touched&&controls['password']?.errors?.['required']"
+      >Password is required</mat-error
+    >
+    <mat-error
+      *ngIf="signupForm.touched&&controls['password']?.errors?.['pattern']"
+      >Must have at least 1 special charecter</mat-error
+    >
+    <mat-error
+      *ngIf="signupForm.touched&&controls['password']?.errors?.['minlength']&&!controls['password']?.errors?.['pattern']"
+      >Must have at least 8 chartecters</mat-error
+    >
+  </mat-form-field>
+  <mat-form-field class="auth-field" appearance="outline">
+    <mat-label>Confirm Password</mat-label>
+    <input
+      matInput
+      placeholder="Confirm password"
+      type="text"
+      formControlName="confirmPassword"
+    />
+    <mat-error
+      *ngIf="
+      signupForm.touched&&controls['password']?.errors?.['validateConfirmPassword']
+      "
+      >Must be equal to password</mat-error
+    >
+  </mat-form-field>
+
+  <button mat-raised-button class="btn btn-dark">Login</button>
+</form>

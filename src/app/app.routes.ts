@@ -3,12 +3,24 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { MovieComponent } from './movie/movie.component';
 import { NotfoundComponent } from './notfound/notfound.component';
+import { AuthLayoutComponent } from './auth-layout/auth-layout.component';
+import { SignupComponent } from './signup/signup.component';
 
 export const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
   {
-    path: 'login',
-    component: LoginComponent,
+    path: 'auth',
+    component: AuthLayoutComponent,
+    children: [
+      {
+        path: 'login',
+        component: LoginComponent,
+      },
+      {
+        path: 'sign-up',
+        component: SignupComponent,
+      },
+    ],
   },
   {
     path: 'home',
