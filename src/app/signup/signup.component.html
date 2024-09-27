@@ -6,7 +6,7 @@
       matInput
       placeholder="Enter name"
       type="text"
-      formControlName="name"
+      formControlName="username"
     />
     <mat-error
       *ngIf="signupForm.touched&&controls['name']?.errors?.['required']"
@@ -19,7 +19,7 @@
       matInput
       placeholder="Enter email"
       type="text"
-      [formControl]="controls['email']"
+      formControlName="email"
     />
     <mat-error
       *ngIf="signupForm.touched&&controls['email']?.errors?.['required']"

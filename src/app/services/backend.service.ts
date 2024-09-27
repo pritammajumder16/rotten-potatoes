@@ -1,19 +1,46 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, catchError } from 'rxjs';
 import { environment } from '../../environments/environment.development';
+import { BackendResponse } from '../../models/interfaces';
 
 @Injectable({
   providedIn: 'root',
 })
 export class BackendService {
-  public backendUri = environment.backendUri;
+  private backendUri = environment.backendUri;
+
   constructor(private http: HttpClient) {}
-  public headers = new HttpHeaders({});
-  getApiCall<T>(route: string): Observable<T> {
-    return this.http.get<T>(this.backendUri + route);
+
+  private headers = new HttpHeaders({
+    'Content-Type': 'application/json',
+  });
+
+  getApiCall(route: string): Observable<BackendResponse> {
+    return this.http
+      .get<BackendResponse>(this.backendUri + route, {
+        headers: this.headers,
+        withCredentials: true,
+      })
+      .pipe(
+        catchError((error) => {
+          console.error('Error occurred:', error);
+          throw error;
+        })
+      );
   }
-  postApiCall<T>(route: string, payload: any): Observable<T> {
-    return this.http.post<T>(this.backendUri + route, payload);
+
+  postApiCall(route: string, payload: any): Observable<BackendResponse> {
+    return this.http
+      .post<BackendResponse>(this.backendUri + route, payload, {
+        headers: this.headers,
+        withCredentials: true,
+      })
+      .pipe(
+        catchError((error) => {
+          console.error('Error occurred:', error);
+          throw error;
+        })
+      );
   }
 }

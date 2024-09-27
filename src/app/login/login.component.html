@@ -10,7 +10,6 @@
       required
       name="email"
       ngModel
-      (click)="testFunc(loginForm)"
     />
     <mat-error
       *ngIf="loginForm.touched && loginForm.controls?.['email']?.errors?.['required']"
