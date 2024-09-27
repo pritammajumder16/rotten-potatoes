@@ -5,6 +5,7 @@ import { MovieComponent } from './movie/movie.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { AuthLayoutComponent } from './auth-layout/auth-layout.component';
 import { SignupComponent } from './signup/signup.component';
+import { authGuard } from './guards/auth.guard';
 
 export const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
@@ -25,6 +26,7 @@ export const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent,
+    canActivate: [authGuard],
   },
   {
     path: 'movie',
